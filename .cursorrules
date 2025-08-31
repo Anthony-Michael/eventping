@@ -1,0 +1,33 @@
+# Repository Guardrails for Cursor
+
+## Authoritative Principles
+- Clarity over cleverness. Prefer small, cohesive, single-responsibility functions.
+- Security first. Default to least privilege; validate inputs; sanitize outputs.
+- Human-readable. A newcomer should grasp each file's purpose in < 60 seconds.
+
+## Required File Header
+All new source files must begin with a brief header docstring containing:
+- Purpose: what this file is for
+- Inputs/Outputs: public API signatures
+- Assumptions: invariants and preconditions
+- Side effects: IO, mutations, network, time, randomness
+
+## Coding Standards
+- Use TypeScript with strict mode on. No `any` unless justified and isolated.
+- Prefer pure functions. Minimize global state and shared mutable data.
+- Explicit errors. Use the error helpers in `src/lib/errors.ts`.
+- Logging must pass through `src/lib/log.ts` to auto-redact sensitive data.
+- Keep functions <80 lines; keep cyclomatic complexity low.
+- Avoid magic numbers; name domain concepts.
+
+## Tooling Rules
+- Run: `npm run typecheck`, `npm run lint`, and `npm test` before commits.
+- Follow Conventional Commits. Example: `feat(api): add webhook receiver`.
+- Prettier formatting is source of truth for code style.
+
+## Security Rules
+- Never log secrets, session tokens, emails, or phone numbers unredacted.
+- Validate and narrow types at boundaries; avoid broad unions and `unknown` escape hatches.
+- Review dependency changes; CI will fail on high/critical advisories.
+
+

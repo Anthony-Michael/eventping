@@ -1,0 +1,4 @@
+#!/bin/sh
+npx --yes lint-staged && npm run typecheck && npm run lint && npm test
+
+
