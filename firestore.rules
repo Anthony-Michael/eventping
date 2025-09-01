@@ -1,0 +1,20 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAuthed() {
+      return request.auth != null;
+    }
+    function orgId() {
+      return request.auth.token.orgId;
+    }
+    // Public events: readable if visibility == "public"
+    match /events/{eventId} {
+      allow read: if resource.data.visibility == "public";
+    }
+    // Everything else under orgs: scoped by org and blocked for client writes
+    match /orgs/{org}/{doc=**} {
+      allow read: if isAuthed() && org == orgId();
+      allow write: if false; // no direct client writes to protected collections
+    }
+  }
+}

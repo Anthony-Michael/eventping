@@ -13,7 +13,16 @@ import securityPlugin from 'eslint-plugin-security';
 import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
-  { ignores: ['dist', 'node_modules', 'coverage', '.husky'] },
+  {
+    ignores: [
+      'dist/**',
+      'coverage/**',
+      'functions/**',
+      'functions/lib/**',
+      'node_modules/**',
+      '.husky',
+    ],
+  },
   {
     files: ['**/*.ts', '**/*.tsx'],
     languageOptions: {
@@ -46,6 +55,17 @@ export default [
       '@typescript-eslint/consistent-type-imports': ['warn', { prefer: 'type-imports' }],
 
       'security/detect-object-injection': 'off',
+    },
+  },
+  {
+    files: ['vite.config.ts', 'tailwind.config.ts', 'postcss.config.js'],
+    languageOptions: {
+      parserOptions: {
+        project: null,
+      },
+    },
+    rules: {
+      '@typescript-eslint/no-floating-promises': 'off',
     },
   },
   {

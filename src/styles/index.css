@@ -1,0 +1,10 @@
+/*
+Purpose: Global Tailwind entry CSS for the app
+Inputs/Outputs: consumed by Vite; emits compiled CSS
+Assumptions: Tailwind configured via postcss
+Side effects: none
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
