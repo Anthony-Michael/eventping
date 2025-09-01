@@ -7,6 +7,7 @@
 - `src/lib/log.ts` provides structured logging with redaction; `src/lib/errors.ts` provides a single error shape and helpers.
 - Global `ErrorBoundary` catches render errors and logs via the logger.
 - Env variables exposed to the client must be prefixed with `PUBLIC_`.
+- Config note: this repo uses ESLint Flat Config (`eslint.config.js`) only. Legacy `.eslintrc.*` files are not used.
 
 Project structure
 

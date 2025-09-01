@@ -28,17 +28,23 @@
   },
   "emulators": {
     "functions": {
-      "port": 5001
+      "port": 5002
     },
     "firestore": {
-      "port": 8080
+      "port": 8085
     },
     "hosting": {
-      "port": 5005
+      "port": 5010
     },
     "ui": {
       "enabled": true,
-      "port": 4000
+      "port": 4005
+    },
+    "hub": {
+      "port": 4410
+    },
+    "logging": {
+      "port": 4510
     },
     "singleProjectMode": true
   }

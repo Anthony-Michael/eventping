@@ -21,6 +21,7 @@
     "web:build": "vite build",
     "functions:build": "tsc -p functions/tsconfig.json",
     "functions:watch": "tsc -p functions/tsconfig.json --watch",
+    "functions:dev": "npm run functions:watch",
     "emulators": "npm run functions:build && firebase emulators:start",
     "emulators:dev": "concurrently \"npm:functions:watch\" \"firebase emulators:start\""
   },
