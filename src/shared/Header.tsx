@@ -33,6 +33,14 @@ export function Header(): React.JSX.Element {
           >
             App
           </NavLink>
+          <NavLink
+            to="/dev-info"
+            className={({ isActive }) =>
+              isActive ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+            }
+          >
+            Dev Info
+          </NavLink>
         </nav>
       </div>
     </header>

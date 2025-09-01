@@ -13,6 +13,7 @@ import './styles/index.css';
 import { AppLayout } from './pages/_layout/AppLayout.js';
 import { HomePage } from './pages/Home.js';
 import { AppShellPage } from './pages/AppShell.js';
+import { DevInfo } from './pages/DevInfo.js';
 import { ErrorBoundary } from './shared/ErrorBoundary.js';
 
 const router = createBrowserRouter([
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     children: [
       { index: true, element: <HomePage /> },
       { path: 'app', element: <AppShellPage /> },
+      { path: 'dev-info', element: <DevInfo /> },
     ],
   },
 ]);
