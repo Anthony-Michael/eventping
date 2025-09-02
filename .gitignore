@@ -9,3 +9,7 @@ coverage/
 
 # Local env (not committed)
 .env.local
+
+# Emulator/debug logs (do not commit)
+firebase-debug.log
+firestore-debug.log

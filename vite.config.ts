@@ -1,6 +1,6 @@
 /**
  * Purpose: Vite configuration for React app with strict env handling.
- * Inputs: process.env with PUBLIC_ prefixed variables
+ * Inputs: process.env with VITE_/PUBLIC_ prefixed variables
  * Outputs: dev server and build configuration
  * Assumptions: Node 20+, ESM, React 18+
  * Side effects: none
@@ -11,10 +11,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  envPrefix: 'PUBLIC_',
+  envPrefix: ['VITE_', 'PUBLIC_'],
   server: {
     port: 5173,
-    strictPort: true,
+    strictPort: false,
   },
   build: {
     sourcemap: true,
