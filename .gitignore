@@ -6,3 +6,6 @@ coverage/
 /functions/lib
 /functions/tsconfig.tsbuildinfo
 
+
+# Local env (not committed)
+.env.local

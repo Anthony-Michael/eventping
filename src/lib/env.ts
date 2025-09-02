@@ -15,11 +15,11 @@ export type FirebasePublicEnv = {
 };
 
 const REQUIRED_KEYS = [
-  'PUBLIC_FIREBASE_API_KEY',
-  'PUBLIC_FIREBASE_AUTH_DOMAIN',
-  'PUBLIC_FIREBASE_PROJECT_ID',
-  'PUBLIC_FIREBASE_APP_ID',
-  'PUBLIC_FIREBASE_MESSAGING_SENDER_ID',
+  'VITE_FIREBASE_API_KEY',
+  'VITE_FIREBASE_AUTH_DOMAIN',
+  'VITE_FIREBASE_PROJECT_ID',
+  'VITE_FIREBASE_APP_ID',
+  'VITE_FIREBASE_MESSAGING_SENDER_ID',
 ] as const;
 
 export function getEnv(): FirebasePublicEnv {
@@ -31,10 +31,10 @@ export function getEnv(): FirebasePublicEnv {
   }
 
   return {
-    apiKey: (env.PUBLIC_FIREBASE_API_KEY as string | undefined) ?? '',
-    authDomain: (env.PUBLIC_FIREBASE_AUTH_DOMAIN as string | undefined) ?? '',
-    projectId: (env.PUBLIC_FIREBASE_PROJECT_ID as string | undefined) ?? '',
-    appId: (env.PUBLIC_FIREBASE_APP_ID as string | undefined) ?? '',
-    messagingSenderId: (env.PUBLIC_FIREBASE_MESSAGING_SENDER_ID as string | undefined) ?? '',
+    apiKey: (env.VITE_FIREBASE_API_KEY as string | undefined) ?? '',
+    authDomain: (env.VITE_FIREBASE_AUTH_DOMAIN as string | undefined) ?? '',
+    projectId: (env.VITE_FIREBASE_PROJECT_ID as string | undefined) ?? '',
+    appId: (env.VITE_FIREBASE_APP_ID as string | undefined) ?? '',
+    messagingSenderId: (env.VITE_FIREBASE_MESSAGING_SENDER_ID as string | undefined) ?? '',
   };
 }
